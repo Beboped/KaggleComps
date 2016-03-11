@@ -1,0 +1,59 @@
+CATEGORICAL FEATURES
+General notes
+-Lots of singular factor levels
+
+Pairwise notes
+v91, v107 - identical
+v71, v75 - almost identical
+v22 - 18211 levels, segment by target shows roughly same distribution (drop)
+v47, v79 connected through v110
+v31 high correlations likely due to only having 3 levels
+
+Drop list
+v107, v22, v110, v125
+
+Potential engineering
+v31 NA almost perfect corr to v110 C
+
+High Cramer's V pairs
+v31, v56 - 0.75
+v31, v110 - 0.77
+v47, v79 - 0.88
+v47, v110 - 1
+v71, v75 - 0.75
+v79, v110 - 1
+v110, v113 - 0.75
+v112, v125 - 1
+
+Low Target Cramer's V
+v75 - .006
+v52 - .016
+v3 - .028
+v112 - .026
+
+NUMERIC FEATURES
+General notes
+
+Pairwise Notes
+
+Drop List
+ID, 
+
+High Person's Correlations
+
+Low Target Pearson's
+v6 - -0.15
+v9 - -.021
+v10 - -.020
+v12 - -.018
+v14 - -.018
+v19 - -.013
+v21 - -.003
+v34 - -.014
+v38 - -.015
+v40 - .004
+v50 - -.008
+v57 - -.009
+v62 - -.0004
+v114 - -.008
+v127 - -.007
