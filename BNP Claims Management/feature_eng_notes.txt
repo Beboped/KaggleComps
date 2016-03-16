@@ -1,6 +1,11 @@
 CATEGORICAL FEATURES
 General notes
 -Lots of singular factor levels
+v56 too many levels
+
+Test set levels not in train set
+v71 - "E", "J" - 1 each - coerce to F (most common)
+v113 - "K" - 1 entry - coerce to ''
 
 Pairwise notes
 v91, v107 - identical
@@ -10,7 +15,7 @@ v47, v79 connected through v110
 v31 high correlations likely due to only having 3 levels
 
 Drop list
-v107, v22, v110, v125
+v107, v22, v110, v125, v56
 
 Potential engineering
 v31 NA almost perfect corr to v110 C
@@ -34,15 +39,87 @@ v112 - .026
 NUMERIC FEATURES
 General notes
 
-Pairwise Notes
+Columns with non-normal distributions
+Poisson - v8, v18?, v19?, v23, v25, v39, v46, v54, v63, v89, v105, v119, v124
+Multiple Normal (binnable) - v129, v36?, v38, v62, v72
+Multiple Normal (not binnable) - v28, v36?, v51, v82
+Messy - v10
+Weird (two-peak w/ valley) - v58, v100 
 
-Drop List
-ID, 
+
+Column Groups
+-PCA these groups together
+v4, v17, v48, v64, v101, v106
+v17, v4, v44, v48, v64, v76, v93, v101, v106
+
+v8, v25, v46, v54, v63, v89, v105, v124
+v15, v32, v73, v86
+v26, v43, v60, v116
+v29, v41, v65, v67, v77, v96
+v33, v55, v61, v65, v83, v84, v106, v111, v121, v123, v130
+
 
 High Person's Correlations
+v5                          v81
+  v8          v25, v46, v63, v105
+ v10                          v12
+ v11                          v53
+ v12                          v10
+ v13                         v104
+ v15                     v32, v73
+ v17                v48, v64, v76
+ v20                          v65
+ v25 v8, v46, v54, v63, v89, v105
+ v26                     v43, v60
+ v29           v41, v67, v77, v96
+ v32                v15, v73, v86
+ v33         v55, v83, v111, v121
+ v34                    v40, v114
+ v39                          v68
+ v40                    v34, v114
+ v41           v29, v49, v67, v96
+ v43                    v26, v116
+ v46 v8, v25, v54, v63, v89, v105
+ v48               v17, v64, v106
+ v49                          v41
+ v53                          v11
+ v54     v25, v46, v63, v89, v105
+ v55                     v33, v83
+ v58                         v100
+ v60                          v26
+ v63 v8, v25, v46, v54, v89, v105
+ v64          v17, v48, v76, v106
+ v65                          v20
+ v67                v29, v41, v77
+ v68                          v39
+ v69                         v115
+ v73                     v15, v32
+ v76                     v17, v64
+ v77                     v29, v67
+ v81                           v5
+ v83         v33, v55, v111, v121
+ v86                          v32
+ v89     v25, v46, v54, v63, v105
+ v92                          v95
+ v95                          v92
+ v96                     v29, v41
+ v97                         v118
+v100                          v58
+v104                          v13
+v105  v8, v25, v46, v54, v63, v89
+v106                     v48, v64
+v108                         v128
+v109                         v128
+v111                     v33, v83
+v114                     v34, v40
+v115                          v69
+v116                          v43
+v118                          v97
+v121                     v33, v83
+v128                   v108, v109
 
 Low Target Pearson's
-v6 - -0.15
+v6 - -0.015
 v9 - -.021
 v10 - -.020
 v12 - -.018
